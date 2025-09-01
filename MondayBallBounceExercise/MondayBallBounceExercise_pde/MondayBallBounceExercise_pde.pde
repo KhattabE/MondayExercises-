@@ -1,10 +1,9 @@
-//Global scope
-
-//Variables of type float, for circle x,y position, and width and height
 float circleX = 250;
 float circleY = 250;
 float circleWidth = 35;
 float circleHeight = 35;
+
+
 
 //To make the circle move
 float speedX = 5;
@@ -46,7 +45,7 @@ void draw() {
     moveRight = false;
     //Border to keep the ball inside on right side 
     if(circleX >= width){
-      circleX = width-10;
+      circleX -= speedX;
     } 
   }
   
@@ -57,7 +56,7 @@ void draw() {
     moveLeft = false;
     //Border to keep the ball inside on the left side 
     if(circleX <= 0){
-    circleX = 0+10;
+    circleX += speedX;
     }
   }
   
@@ -69,7 +68,7 @@ void draw() {
   } 
   //Border to keep the ball inside on the top side 
   if(circleY <= 0){
-    circleY = 0+10;
+    circleY += speedY;
   }
   
   
@@ -80,7 +79,7 @@ void draw() {
   } 
   //Border to keep the ball inside on the top side 
   if(circleY >= height){
-    circleY = height-10;
+    circleY -= speedY;
   }
   
   
